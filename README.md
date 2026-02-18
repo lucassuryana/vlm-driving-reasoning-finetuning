@@ -7,7 +7,7 @@
 ---
 
 Expected repo tree:
-
+```text
 reason-driven-av/
 ├── README.md
 ├── requirements.txt
@@ -29,6 +29,7 @@ reason-driven-av/
 │   └── prepare_data.sh
 └── assets/
     └── pipeline_overview.png  # placeholder for diagram
+```
 
 ## Overview
 
