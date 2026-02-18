@@ -6,6 +6,30 @@
 
 ---
 
+Expected repo tree:
+
+reason-driven-av/
+├── README.md
+├── requirements.txt
+├── configs/
+│   └── training.yaml
+├── data/
+│   ├── raw/                  # original images + annotation JSONs
+│   ├── processed/            # converted message-format JSONL
+│   └── sample/
+│       └── sample_data.json  # tiny example for smoke-testing
+├── src/
+│   ├── __init__.py
+│   ├── dataset.py
+│   ├── train.py
+│   └── infer.py
+├── notebooks/
+│   └── explore_dataset.ipynb
+├── scripts/
+│   └── prepare_data.sh
+└── assets/
+    └── pipeline_overview.png  # placeholder for diagram
+
 ## Overview
 
 This repository implements a supervised fine-tuning (SFT) pipeline for **Qwen2-VL**, a vision-language model (VLM), to produce autonomous vehicle (AV) decisions that are explicitly grounded in **human-relevant reasons** — rather than pattern-matched from visual input alone.
