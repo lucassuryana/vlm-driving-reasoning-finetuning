@@ -1,0 +1,32 @@
+# training.yaml
+# Safe defaults for a single 16GB GPU (e.g. RTX 3090 / A4000).
+# For A100 40GB: increase batch_size to 2, max_length to 2048.
+
+model:
+  name: "Qwen/Qwen2-VL-7B-Instruct"
+
+data:
+  train_path: "data/processed/train.jsonl"
+  max_length: 1024   # token budget per sample (image tokens + text)
+
+lora:
+  r: 16
+  alpha: 32
+  dropout: 0.05
+  target_modules:
+    - q_proj
+    - k_proj
+    - v_proj
+    - o_proj
+    # Uncomment to include MLP layers (improves capacity, costs VRAM)
+    # - gate_proj
+    # - up_proj
+    # - down_proj
+
+training:
+  output_dir: "./outputs/qwen2vl-care-drive"
+  epochs: 3
+  batch_size: 1              # keep at 1 for 16GB VRAM
+  grad_accum: 8              # effective batch size = 8
+  lr: 2.0e-4
+  save_steps: 100
