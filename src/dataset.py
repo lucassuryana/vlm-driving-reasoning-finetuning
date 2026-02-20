@@ -1,3 +1,4 @@
+"""
 dataset.py
 Loads raw CARE-Drive annotations and converts them to Qwen2-VL
 SFT message format. Each (image, question) → answer pair becomes
